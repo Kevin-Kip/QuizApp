@@ -1,15 +1,17 @@
 package ke.co.sombo.apps.quizapp;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import java.util.Locale;
 
@@ -39,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
     CheckBox q2option3;
     @BindView (R.id.q2option4)
     CheckBox q2option4;
-    @BindView (R.id.q3option)
-    EditText q3option;
     @BindView (R.id.q4option1)
     RadioButton q4option1;
     @BindView (R.id.q4option2)
@@ -49,10 +49,15 @@ public class MainActivity extends AppCompatActivity {
     CheckBox q5option1;
     @BindView (R.id.q5option2)
     CheckBox q5option2;
+    @BindView (R.id.q3option1)
+    RadioButton q3option1;
+    @BindView (R.id.q3option2)
+    RadioButton q3option2;
+    @BindView (R.id.q3option3)
+    RadioButton q3option3;
+    @BindView (R.id.q3option4)
+    RadioButton q3option4;
     private int score;
-
-
-    String q3answer = "hybrid";
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
@@ -74,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked()) {
             incrementScore();
         }
-        if ((q3option.getText().toString().trim()).equalsIgnoreCase(q3answer)) {
+        if (q3option3.isChecked()){
             incrementScore();
         }
         if (q4option1.isChecked()) {
@@ -83,8 +88,17 @@ public class MainActivity extends AppCompatActivity {
         if (q5option1.isChecked()) {
             incrementScore();
         }
-        scoreText.setText(String.format(Locale.getDefault(), "Score: %d", score));
-        Toast.makeText(getApplicationContext(), "Your score is: " + score, Toast.LENGTH_SHORT).show();
+        new MaterialDialog.Builder(MainActivity.this)
+                .title("Score")
+                .content("Your Score is " + score)
+                .neutralText("Close")
+                .onNeutral(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick (@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        dialog.dismiss();
+                        resetGame();
+                    }
+                });
     }
 
     public void incrementScore () {
@@ -100,20 +114,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         if (item.getItemId() == R.id.reset) {
-            q1option1.setChecked(false);
-            q1option2.setChecked(false);
-            q1option3.setChecked(false);
-            q1option4.setChecked(false);
-            q2option1.setChecked(false);
-            q2option2.setChecked(false);
-            q2option3.setChecked(false);
-            q2option4.setChecked(false);
-            q3option.setText("");
-            q4option1.setChecked(false);
-            q4option2.setChecked(false);
-            q5option1.setChecked(false);
-            q5option2.setChecked(false);
+            resetGame();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void resetGame () {
+        q1option1.setChecked(false);
+        q1option2.setChecked(false);
+        q1option3.setChecked(false);
+        q1option4.setChecked(false);
+        q2option1.setChecked(false);
+        q2option2.setChecked(false);
+        q2option3.setChecked(false);
+        q2option4.setChecked(false);
+        q3option1.setChecked(false);
+        q3option2.setChecked(false);
+        q3option3.setChecked(false);
+        q3option4.setChecked(false);
+        q4option1.setChecked(false);
+        q4option2.setChecked(false);
+        q5option1.setChecked(false);
+        q5option2.setChecked(false);
     }
 }

@@ -22,17 +22,7 @@
             app:elevation="0dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:title="@string/app_name">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                tools:text="Score: 23"
-                android:textSize="20sp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="5dp"
-                android:id="@+id/score_text"/>
-        </android.support.v7.widget.Toolbar>
+            app:title="@string/app_name"/>
     </android.support.design.widget.AppBarLayout>
     <ScrollView
         android:layout_width="0dp"
@@ -130,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/elixir"
                     android:padding="10dp"
+                    android:layout_marginStart="10dp"
                     android:id="@+id/q2option1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/number2"/>
@@ -138,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/go"
                     android:padding="10dp"
+                    android:layout_marginStart="10dp"
                     android:id="@+id/q2option2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q2option1"/>
@@ -146,6 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/kotlin"
                     android:padding="10dp"
+                    android:layout_marginStart="10dp"
                     android:id="@+id/q2option3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q2option2"/>
@@ -154,6 +147,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/english"
                     android:padding="10dp"
+                    android:layout_marginStart="10dp"
                     android:id="@+id/q2option4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q2option3"/>
@@ -182,15 +176,36 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toEndOf="@id/number3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="@string/android_apps_can_be_native_or" />
-                <EditText
-                    android:layout_width="match_parent"
+                    android:text="@string/js_quiz"/>
+                <RadioGroup
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/q3option"
-                    app:layout_constraintTop_toBottomOf="@id/number3"
+                    android:padding="10dp"
+                    android:id="@+id/radio_group_3"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:hint="@string/type_answer_here"/>
+                    app:layout_constraintTop_toBottomOf="@id/number3"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nodejs"
+                        android:id="@+id/q3option1"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vanilla"
+                        android:id="@+id/q3option2"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/andular"
+                        android:id="@+id/q3option3"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/react"
+                        android:id="@+id/q3option4"/>
+                </RadioGroup>
             </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
@@ -268,6 +283,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/number5"
                     android:id="@+id/q5option1"
+                    android:layout_marginStart="10dp"
                     android:text="@string/programming_language"/>
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -275,6 +291,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/q5option1"
                     android:id="@+id/q5option2"
+                    android:layout_marginStart="10dp"
                     android:text="@string/markup_language"/>
 
             </android.support.constraint.ConstraintLayout>

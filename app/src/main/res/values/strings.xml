@@ -36,4 +36,9 @@
     <string name="markup_language">Markup Language</string>
     <string name="submit">SUBMIT</string>
     <string name="reset">RESET</string>
+    <string name="js_quiz">Which of the following is not a JavaScript framework/library?</string>
+    <string name="react">React</string>
+    <string name="andular">Andular</string>
+    <string name="vanilla">Vanilla</string>
+    <string name="nodejs">NodeJS</string>
 </resources>
