@@ -8,12 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,8 +18,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView (R.id.score_text)
-    TextView scoreText;
     @BindView (R.id.toolbar)
     Toolbar toolbar;
     @BindView (R.id.q1option1)
@@ -57,6 +52,40 @@ public class MainActivity extends AppCompatActivity {
     RadioButton q3option3;
     @BindView (R.id.q3option4)
     RadioButton q3option4;
+    @BindView (R.id.q6option1)
+    RadioButton q6option1;
+    @BindView (R.id.q6option2)
+    RadioButton q6option2;
+    @BindView (R.id.q6option3)
+    RadioButton q6option3;
+    @BindView (R.id.q6option4)
+    RadioButton q6option4;
+    @BindView (R.id.q7option1)
+    RadioButton q7option1;
+    @BindView (R.id.q7option2)
+    RadioButton q7option2;
+    @BindView (R.id.q7option3)
+    RadioButton q7option3;
+    @BindView (R.id.q7option4)
+    RadioButton q7option4;
+    @BindView (R.id.q8option1)
+    CheckBox q8option1;
+    @BindView (R.id.q8option2)
+    CheckBox q8option2;
+    @BindView (R.id.q9option1)
+    RadioButton q9option1;
+    @BindView (R.id.q9option2)
+    RadioButton q9option2;
+    @BindView (R.id.q9option3)
+    RadioButton q9option3;
+    @BindView (R.id.q9option4)
+    RadioButton q9option4;
+    @BindView (R.id.q10option1)
+    RadioButton q10option1;
+    @BindView (R.id.q10option2)
+    RadioButton q10option2;
+    @BindView (R.id.q10option3)
+    RadioButton q10option3;
     private int score;
 
     @Override
@@ -68,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         score = 0;
-        scoreText.setText(String.format(Locale.getDefault(), "Score: %d", score));
     }
 
     @OnClick (R.id.submit_button)
@@ -79,13 +107,28 @@ public class MainActivity extends AppCompatActivity {
         if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked()) {
             incrementScore();
         }
-        if (q3option3.isChecked()){
+        if (q3option3.isChecked()) {
             incrementScore();
         }
         if (q4option1.isChecked()) {
             incrementScore();
         }
         if (q5option1.isChecked()) {
+            incrementScore();
+        }
+        if (q6option4.isChecked()){
+            incrementScore();
+        }
+        if (q7option4.isChecked()){
+            incrementScore();
+        }
+        if (q8option2.isChecked()){
+            incrementScore();
+        }
+        if (q9option1.isChecked()){
+            incrementScore();
+        }
+        if (q10option2.isChecked()){
             incrementScore();
         }
         new MaterialDialog.Builder(MainActivity.this)
@@ -136,5 +179,22 @@ public class MainActivity extends AppCompatActivity {
         q4option2.setChecked(false);
         q5option1.setChecked(false);
         q5option2.setChecked(false);
+        q6option1.setChecked(false);
+        q6option2.setChecked(false);
+        q6option3.setChecked(false);
+        q6option4.setChecked(false);
+        q7option1.setChecked(false);
+        q7option2.setChecked(false);
+        q7option3.setChecked(false);
+        q7option4.setChecked(false);
+        q8option1.setChecked(false);
+        q8option2.setChecked(false);
+        q9option1.setChecked(false);
+        q9option2.setChecked(false);
+        q9option3.setChecked(false);
+        q9option4.setChecked(false);
+        q10option1.setChecked(false);
+        q10option2.setChecked(false);
+        q10option3.setChecked(false);
     }
 }
