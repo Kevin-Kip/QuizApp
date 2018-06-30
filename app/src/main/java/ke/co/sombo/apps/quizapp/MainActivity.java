@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         if (q1option1.isChecked()) {
             incrementScore();
         }
-        if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked()) {
+        if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked() && !q2option4.isChecked()) {
             incrementScore();
         }
         if (q3option3.isChecked()) {
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         if (q7option4.isChecked()){
             incrementScore();
         }
-        if (q8option2.isChecked()){
+        if (q8option1.isChecked()){
             incrementScore();
         }
         if (q9option1.isChecked()){
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                         resetGame();
                     }
-                });
+                }).show();
     }
 
     public void incrementScore () {
@@ -196,5 +196,6 @@ public class MainActivity extends AppCompatActivity {
         q10option1.setChecked(false);
         q10option2.setChecked(false);
         q10option3.setChecked(false);
+        score = 0;
     }
 }
