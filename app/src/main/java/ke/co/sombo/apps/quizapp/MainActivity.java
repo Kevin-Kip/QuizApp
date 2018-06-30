@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -86,6 +87,20 @@ public class MainActivity extends AppCompatActivity {
     RadioButton q10option2;
     @BindView (R.id.q10option3)
     RadioButton q10option3;
+    @BindView (R.id.radio_group_1)
+    RadioGroup radioGroup1;
+    @BindView (R.id.radio_group_3)
+    RadioGroup radioGroup3;
+    @BindView (R.id.radio_group_2)
+    RadioGroup radioGroup2;
+    @BindView (R.id.radio_group_4)
+    RadioGroup radioGroup4;
+    @BindView (R.id.radio_group_5)
+    RadioGroup radioGroup5;
+    @BindView (R.id.radio_group_7)
+    RadioGroup radioGroup7;
+    @BindView (R.id.radio_group_8)
+    RadioGroup radioGroup8;
     private int score;
 
     @Override
@@ -104,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         if (q1option1.isChecked()) {
             incrementScore();
         }
-        if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked() && !q2option4.isChecked()) {
+        if (q2option1.isChecked() && q2option2.isChecked() && q2option3.isChecked() && ! q2option4.isChecked()) {
             incrementScore();
         }
         if (q3option3.isChecked()) {
@@ -116,19 +131,19 @@ public class MainActivity extends AppCompatActivity {
         if (q5option1.isChecked()) {
             incrementScore();
         }
-        if (q6option4.isChecked()){
+        if (q6option4.isChecked()) {
             incrementScore();
         }
-        if (q7option4.isChecked()){
+        if (q7option4.isChecked()) {
             incrementScore();
         }
-        if (q8option1.isChecked()){
+        if (q8option1.isChecked()) {
             incrementScore();
         }
-        if (q9option1.isChecked()){
+        if (q9option1.isChecked()) {
             incrementScore();
         }
-        if (q10option2.isChecked()){
+        if (q10option2.isChecked()) {
             incrementScore();
         }
         new MaterialDialog.Builder(MainActivity.this)
@@ -196,6 +211,13 @@ public class MainActivity extends AppCompatActivity {
         q10option1.setChecked(false);
         q10option2.setChecked(false);
         q10option3.setChecked(false);
+        radioGroup1.clearCheck();
+        radioGroup2.clearCheck();
+        radioGroup3.clearCheck();
+        radioGroup4.clearCheck();
+        radioGroup5.clearCheck();
+        radioGroup7.clearCheck();
+        radioGroup8.clearCheck();
         score = 0;
     }
 }
